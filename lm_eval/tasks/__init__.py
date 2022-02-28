@@ -43,6 +43,7 @@ from . import pile
 from . import wikitext
 from . import lambada_multilingual
 from . import mutual
+from . import radbio_papers_test
 
 ########################################
 # Translation tasks
@@ -76,6 +77,8 @@ all_translation_benchmarks = {
 
 TASK_REGISTRY = {
     # GLUE
+    "radbiotest" : radbio_papers_test.RadBioText,
+    
     "cola": glue.CoLA,
     "mnli": glue.MNLI,
     "mnli_mismatched": glue.MNLIMismatched,
