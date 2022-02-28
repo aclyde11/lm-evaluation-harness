@@ -83,8 +83,9 @@ The length of the generated word will be equal to the length of the number you p
     def docs_for_split(self, split):
         ret = []
         for line in open(f"radbiotexthack.txt").read().split('\n'):
-            rline = line.replace("= = =", "===").replace("= =", "==").strip()
-            yield '\n'.join(rline)
+            rline = line.strip()
+            if len(line) > 30:
+                yield line
 
     def validation_docs(self):
         return self.docs_for_split('valid')
