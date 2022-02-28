@@ -3,7 +3,7 @@ from typing import List, Union
 
 import sacrebleu
 import lm_eval.base
-
+from . import radbio_papers_test
 from . import superglue
 from . import glue
 from . import arc
@@ -82,6 +82,7 @@ all_translation_benchmarks = {
 
 
 TASK_REGISTRY = {
+    "radbiotest" : radbio_papers_test.RadBioText,
     # GLUE
     "cola": glue.CoLA,
     "mnli": glue.MNLI,
